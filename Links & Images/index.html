@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Homepage</h1>
+    <!--  The next command is an "anchor", in this case used for a link to another webpage.
+          The "href" attribute specifies the destination, the "target" attribute makes the browser open a new page.
+          As a good practice, the "rel" attribute is added for security reasons, even if modern browser should already take care of it.
+          Notice that the "rel" attribute is needed only because of the "_blank" argument before. -->
+    <a href="https://www.theodinproject.com/about" target="_blank" rel="noopener noreferrer">About The Odin Project</a>
+
+
+    <!-- The next command is same as before, but this time instead of an absolute link it's a relative link, meaning it links
+         to a page of the same domain -->
+    <a href="pages/about.html">About</a>
+
+
+    <!-- The next command adds an image.
+        The "src" attribute indicates the source of the image, with a oath RELATIVE to the current locaiton.
+        (See in the "about" file how the same image is linked).
+        The "alt" attribute gives a text alternative in case the image fails to load.
+        The "height" and "width" attributes are a good practice, even if the image is later modified with CSS. -->
+    <img src="./images/dog.jpg" alt="Image of a dog" height="853" width="640">
+
+
+
+</body>
+</html>
