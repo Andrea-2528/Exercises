@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation</title>
+    <script src="./script.js" defer></script>
+</head>
+<body>
+
+    <h1>THE TITLE OF YOUR WEBPAGE</h1>
+
+    <div id="container"></div>
+    <br>
+    <button onclick="alert('Hello World')">Click Me</button>  <!--Solution less than preferable-->
+    <br>
+    <br>
+    <button id="btn1">Click Me</button> <!--Check script.js-->
+    <br>
+    <br>
+    <button id="btn2">Click Me Too</button>     <!-- Check script.js -->
+    <br>
+    <br>
+    <p>Attaching listeners to group of nodes:</p> <!--Check script.js line 71 onwards-->
+    <br>
+    <div id="container">
+        <button id="one">Click Me</button>
+        <button id="two">Click Me</button>
+        <button id="three">Click Me</button>
+    </div>
+
+</body>
+</html>
