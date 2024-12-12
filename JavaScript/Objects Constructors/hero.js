@@ -36,4 +36,11 @@ function Hero(name, level) {
   const hero1 = new Warrior('Bjorn', 1, 'axe');
   const hero2 = new Healer('Kanin', 1, 'cure');
 
+  // With this code we’ve created our Hero constructor with the base properties, 
+  // created two character constructors called Warrior and Healer from the original constructor, 
+  // added methods to the prototypes and created individual character instances.
   
+  console.log(hero1.name + " " + hero1.level + " " + hero1.weapon);
+  console.log(hero1.attack());
+  console.log(hero2.name + " " + hero2.level + " " + hero2.weapon);
+  console.log(hero2.heal());
