@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title></title>
+</head>
+
+<body>
+    
+  <script>
+
+    function outer(){
+        let outerVar = "Hey I'm an outer var!"
+
+        function inner(){
+            let innerVar = "Hey I'm an inner var!"
+            console.log(outerVar);
+            console.log(innerVar);
+        }
+
+        return inner;
+    }
+                                //InnerFn is itself a function
+    const innerFn = outer();    //InnerFn has the return value of outer()
+                                //Outer returns a function
+    
+    innerFn();                  //This returns the two console logs, since it executes inner()
+                                // but with the parent's variables still in scope (outerVar)
+
+
+
+
+
+  </script>
+
+</body>
+</html>
