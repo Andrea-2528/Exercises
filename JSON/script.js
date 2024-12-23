@@ -1,23 +1,31 @@
-// async is used because fetch is an async function
+// The purpose of this function is to fetch some JSON data from a URL and use it to populate
+// the header and section elements of the page. The function is declared as "async" because
+// it contains an "await" expression, which is used to wait for the asynchronous fetch() call
+// to complete.
 async function populate() {
-    // Define the URL of the JSON file containing superhero data
-    const requestURL = "https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json";
-    
-    // Create a new Request object using the URL
-    const request = new Request(requestURL);
-  
-    // Fetch the data from the server using the Request object
-    // await is used because fetch is an async function
-    const response = await fetch(request);
-    
-    // Parse the JSON from the response into a JavaScript object
-    const superHeroes = await response.json();
-  
-    // Call the function to populate the header with the superhero data
-    populateHeader(superHeroes);
-    
-    // Call the function to populate the hero details with the superhero data
-    populateHeroes(superHeroes);
+  // The URL of the JSON data to fetch
+  const requestURL =
+    "https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json";
+
+  // Create a new Request object with the URL
+  const request = new Request(requestURL);
+
+  // Use the fetch() function to send a GET request for the JSON data
+  // fetch() is an asynchronous function, so we use the "await" keyword to wait for it
+  // to complete before continuing with the rest of the code
+  const response = await fetch(request);
+
+  // Once the fetch() call has completed, we can get the text content of the response
+  // using the text() method. This will contain the JSON data as a string.
+  const superHeroesText = await response.text();
+
+  // Parse the JSON data string into an object using the JSON.parse() method
+  const superHeroes = JSON.parse(superHeroesText);
+
+  // Call the populateHeader() and populateHeroes() functions to populate the
+  // header and section elements of the page with the data
+  populateHeader(superHeroes);
+  populateHeroes(superHeroes);
 }
 
 function populateHeader(obj) {
