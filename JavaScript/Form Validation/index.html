@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Form Validation</title>
+		<link rel="stylesheet" href="style.css" />
+		<script defer src="./script.js"></script>
+	</head>
+	<body>
+		<div class="form-div">
+			<form action="" method="post" novalidate class="example-form">
+				<p>Each field preceded by `*` is required</p>
+				<!-- Personal Informations -->
+				<section class="form-section">
+					<h2>Personal Informations</h2>
+					<section class="form-field">
+						<label for="first-name">* First Name:</label>
+						<input
+							type="text"
+							id="first-name"
+							name="first-name"
+							minlength="2"
+							maxlength="32"
+							required
+						/>
+						<span class="error" id="first-name"></span>
+					</section>
+					<section class="form-field">
+						<label for="last-name">* Last Name:</label>
+						<input
+							type="text"
+							id="last-name"
+							name="last-name"
+							minlength="2"
+							maxlength="32"
+							required
+						/>
+						<span class="error" id="last-name"></span>
+					</section>
+				</section>
+				<!-- Account Informations -->
+				<section class="form-section">
+					<h2>Account Informations</h2>
+					<section class="form-field">
+						<label for="email">* Email:</label>
+						<input
+							type="email"
+							id="email"
+							name="email"
+							minlength="8"
+							required
+						/>
+						<span class="error" id="email"></span>
+					</section>
+					<section class="form-field">
+						<label for="confirm-email">* Confirm Email:</label>
+						<input
+							type="email"
+							id="confirm-email"
+							name="confirm-email"
+                            autocomplete="off"
+							required
+						/>
+						<span class="error" id="confirm-email"></span>
+					</section>
+					<section class="form-field">
+						<label for="password">* Password:</label>
+						<input
+							type="password"
+							id="password"
+							name="password"
+							pattern="^(?=.*[A-Z].*[A-Z])(?=.*[!@#$&*])(?=.*[0-9].*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{8,}$"
+                            required
+						/>
+						<span class="error" id="password"></span>
+					</section>
+					<section class="form-field">
+						<label for="confirm-password">* Confirm Password:</label>
+						<input
+							type="password"
+							id="confirm-password"
+							name="confirm-password"
+                            autocomplete="off"
+                            required
+						/>
+						<span class="error" id="confirm-password"></span>
+					</section>
+				</section>
+				<!-- Contact Informations -->
+				<section class="form-section">
+					<h2>Contact Informations</h2>
+					<section class="form-field">
+						<label for="phone">* Phone:</label>
+						<input type="tel" id="phone" name="phone" minlength="10" maxlength="10" required />
+						<span class="error" id="phone"></span>
+					</section>
+					<section class="form-field">
+						<label for="address">Address:</label>
+						<input type="text" id="address" name="address" minlength="8" />
+						<span class="error" id="address"></span>
+					</section>
+					<section class="form-field">
+						<label for="zip-code">Zip Code:</label>
+						<input type="tel" id="zip-code" name="zip-code" />
+						<span class="error" id="zip-code" pattern="^\d{5}$"></span>
+					</section>
+				<button type="submit" id="submit">Submit</button>
+                <span class="error" id="submit"></span>
+			</form>
+		</div>
+	</body>
+</html>
