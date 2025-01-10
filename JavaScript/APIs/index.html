@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Document</title>
+	</head>
+	<body>
+		<img id="1" src="#" />
+		<img id="2" src="#" />
+		<script>
+			async function getCatsAndDogs() {
+				try{
+					let result = await Promise.all([
+						fetch("https://api.giphy.com/v1/gifs/translate?api_key=tAOivFOczILx50OhuQRmatndy1ZSxIth&s=cat",{ mode: "cors" }),
+						// Here can go multiple await calls, result is fullfilled when all are done or an error is thrown
+						fetch("https://api.giphy.com/v1/gifs/translate?api_key=tAOivFOczILx50OhuQRmatndy1ZSxIth&s=dog",{ mode: "cors" })
+					])
+					let resultJSON = await Promise.all([
+						result[0].json(),
+						result[1].json()
+					])
+
+					catImg.src = resultJSON[0].data.images.original.url;
+					dogImg.src = resultJSON[1].data.images.original.url;
+				}
+				catch(error){
+					alert(error);
+				}
+			}
+			const catImg = document.getElementById("1");
+			const dogImg = document.getElementById("2");
+			getCatsAndDogs();
+			// getCats().then( function(args) {block} )   To do stuff AFTER the async function
+			// getCats().catch( function(error) {block} ) To do stuff with a fallin-through error
+		</script>
+	</body>
+</html>
